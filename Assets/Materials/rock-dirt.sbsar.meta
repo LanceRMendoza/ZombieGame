@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 93479e2d4030c4443a99a88cf86661e6
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: dda12f74ff9116a42b23482252b2c482, type: 3}
+  _instancesCopy:
+  - {fileID: 11400000, guid: ac4d5ecd947750c4d9da17a31cfcbf42, type: 2}
+  _fileAsset: {instanceID: 0}
+  _assetPath: Assets/Materials/rock-dirt.sbsar
