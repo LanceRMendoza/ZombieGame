@@ -20,8 +20,8 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] [Range(10,800)]private int airSpeed;
     [SerializeField] [Range(0,1)]private float groundDrag;
     [SerializeField] [Range(0,1)]private float airDrag;
-    [SerializeField] [Range(0,100)] private float jumpImpulse = 35;
-    [SerializeField] [Range(0,100)] private float jumpForce = 7;
+    [SerializeField] [Range(0,100)] private float jumpImpulse = 10;
+    [SerializeField] [Range(0,100)] private float jumpForce = 2;
 
     private float CheckForGroundDistance = 0.5f;
 
