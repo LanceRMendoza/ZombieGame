@@ -11,13 +11,21 @@ public class Bullet : MonoBehaviour
     //}
 
     // Update is called once per frame
-    
-    private void OnTriggerEnter(Collider collision)
+
+    public float life = 3;
+
+    void Awake()
     {
-        if (collision.gameObject.GetComponent<EnemyBehavior>() != null)
-        {
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
-        }
+        Destroy(gameObject, life);
     }
+    
+    // private void OnTriggerEnter(Collider collision)
+    // {
+    //     if (collision.gameObject.GetComponent<EnemyBehavior>() != null)
+    //     {
+    //         Destroy(collision.gameObject);
+    //         Destroy(gameObject);
+    //     }
+
+    // }
 }

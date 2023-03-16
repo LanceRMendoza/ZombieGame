@@ -1904,6 +1904,10 @@ PrefabInstance:
       propertyPath: groundLayer.m_Bits
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 413386584726059021, guid: b78f798a615bcb748881fdcc45d88628, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 949444884}
     - target: {fileID: 2483874984006866808, guid: b78f798a615bcb748881fdcc45d88628, type: 3}
       propertyPath: m_LocalPosition.y
       value: 2.52
@@ -4518,6 +4522,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 888446891}
   m_Mesh: {fileID: 4300000, guid: 5ceaaa51b974a594b815f5886577955c, type: 3}
+--- !u!20 &949444884 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 5067479206631000234, guid: b78f798a615bcb748881fdcc45d88628, type: 3}
+  m_PrefabInstance: {fileID: 401165915}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &967913209
 GameObject:
   m_ObjectHideFlags: 0
