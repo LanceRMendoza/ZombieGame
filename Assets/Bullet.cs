@@ -14,18 +14,27 @@ public class Bullet : MonoBehaviour
 
     public float life = 3;
 
+    // public GameObject hitBlood;
+
     void Awake()
     {
         Destroy(gameObject, life);
     }
     
-    // private void OnTriggerEnter(Collider collision)
-    // {
-    //     if (collision.gameObject.GetComponent<EnemyBehavior>() != null)
-    //     {
-    //         Destroy(collision.gameObject);
-    //         Destroy(gameObject);
-    //     }
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.GetComponent<EnemyBehavior>() != null)
+        {
+            HitTarget();
 
-    // }
+        }
+
+    }
+
+    void HitTarget()
+    {
+        // GameObject effectIns = (GameObject)Instantiate(hitBlood, transform.position, transform.rotation);
+        // Destroy (effectIns, 2);
+        Destroy(gameObject);
+    }
 }

@@ -8,6 +8,9 @@ public class ZombieScript : MonoBehaviour
     // Start is called before the first frame update
     public GameObject Target;
     public float speed = 1.5f;
+
+    public GameObject hitBlood;
+
     void Start()
     {
         
@@ -24,7 +27,17 @@ public class ZombieScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Bullet")
+
+            OnHit();
             //audioPlayer3.Play();
             Destroy(gameObject);
     }
+
+    void OnHit()
+    {
+        GameObject effectIns = (GameObject)Instantiate(hitBlood, transform.position, transform.rotation);
+        Destroy (effectIns, 2);
+
+    }
+
 }

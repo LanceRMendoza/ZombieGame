@@ -3381,7 +3381,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1454
+  m_Name: pb_Mesh-2560
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9009,7 +9009,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1468
+  m_Name: pb_Mesh-2574
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9624,7 +9624,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1482
+  m_Name: pb_Mesh-2588
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9999,6 +9999,7 @@ MonoBehaviour:
   audioPlayer3: {fileID: 0}
   Target: {fileID: 485096421}
   speed: 1.5
+  hitBlood: {fileID: 2749131627556556335, guid: df6595bb66d606f439051505373f8485, type: 3}
 --- !u!54 &3858117837946268420
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10131,6 +10132,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3432830393466693727, guid: 0d7b82d6b0af7e44c8c57212c633e807, type: 3}
+      propertyPath: hitBlood
+      value: 
+      objectReference: {fileID: 2749131627556556335, guid: df6595bb66d606f439051505373f8485, type: 3}
     - target: {fileID: 4823381443013409048, guid: 0d7b82d6b0af7e44c8c57212c633e807, type: 3}
       propertyPath: m_Name
       value: Bullet
