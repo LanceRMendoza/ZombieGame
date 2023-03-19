@@ -470,7 +470,6 @@ GameObject:
   - component: {fileID: 7421324320353345909}
   - component: {fileID: 7887668949735727589}
   - component: {fileID: 8515407463519170817}
-  - component: {fileID: 5744678290509905708}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -543,26 +542,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &5744678290509905708
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5120028079364087837}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 50b7c3ad17741a344a5f9cbf50535954, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &8318155276430711507
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,7 +637,6 @@ MonoBehaviour:
   jumpImpulse: 35
   jumpForce: 7
   audioPlayer: {fileID: 0}
-  audioPlayer2: {fileID: 0}
 --- !u!1001 &7606369091031098210
 PrefabInstance:
   m_ObjectHideFlags: 0

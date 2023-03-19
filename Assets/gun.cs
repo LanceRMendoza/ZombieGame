@@ -14,7 +14,6 @@ public class gun : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
-
         }
     }
 
@@ -26,6 +25,5 @@ public class gun : MonoBehaviour
         //shooting bullet animation
         GameObject effectIns = (GameObject)Instantiate(shootFire, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
         Destroy (effectIns, 1);
-
     }
 }

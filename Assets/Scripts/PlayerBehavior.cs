@@ -11,7 +11,6 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] private Transform modelContainer;
     [SerializeField] private Text debugText;
     [SerializeField] LayerMask groundLayer;
-    [SerializeField] private Animator bodyAnimator;
 
     [Header("Designer Variables")]
 
@@ -43,7 +42,6 @@ public class PlayerBehavior : MonoBehaviour
 
     // Audio
     public AudioSource audioPlayer;
-    public AudioSource audioPlayer2;
 
     private void Awake(){
         inputs = new PlayerInput();
@@ -53,7 +51,6 @@ public class PlayerBehavior : MonoBehaviour
             // lambda operator => member pointing to an expression.
         inputs.PlayerControls.Move.performed += ctx => movementInput = ctx.ReadValue<Vector2>();
 
-
         //lerp = Linear interpolation, start + (b - a) * t
     }
 
@@ -62,7 +59,12 @@ public class PlayerBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playJumpSound();
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)){
+            audioPlayer.volume = 1f;
+        }
+        else{
+            audioPlayer.volume = 0f;
+        }
 
         // Collect Input
         xVel = movementInput.x;
@@ -140,7 +142,6 @@ public class PlayerBehavior : MonoBehaviour
         if (onGround){
             rb.AddForce(Vector3.up * jumpImpulse, ForceMode.Impulse);
             onGround = false;
-            bodyAnimator.SetTrigger("Jump Trigger");
             jumpHold = true;
             airVelocity = moveDirection * walkSpeed;
         }
@@ -167,18 +168,6 @@ public class PlayerBehavior : MonoBehaviour
 
     private void OnDisable(){
         inputs.Disable();
-    }
-
-    public void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Ground")
-            audioPlayer.Play();
-    }
-    public void playJumpSound(){
-        if (Input.GetKeyDown(KeyCode.Space)){
-            audioPlayer2.Play();
-            
-        }
     }
 }
 

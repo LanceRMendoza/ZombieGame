@@ -12,7 +12,10 @@ public class Bullet : MonoBehaviour
 
     // Update is called once per frame
 
-    public float life = 3;
+    public float life = 1;
+    public AudioSource bulletSound;
+    public AudioSource splatterSound;
+
 
     // public GameObject hitBlood;
 
@@ -21,20 +24,29 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject, life);
     }
     
-    private void OnTriggerEnter(Collider collision)
+    void Update()
     {
-        if (collision.gameObject.GetComponent<EnemyBehavior>() != null)
-        {
-            HitTarget();
-
-        }
-
+        playBulletSound();
     }
 
-    void HitTarget()
-    {
+    //void HitTarget()
+    //{
         // GameObject effectIns = (GameObject)Instantiate(hitBlood, transform.position, transform.rotation);
         // Destroy (effectIns, 2);
-        Destroy(gameObject);
+        //Destroy(gameObject);
+    //}
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Zombie")
+            splatterSound.Play();
+            Destroy(gameObject);
+            Debug.Log("working");
+    }
+    public void playBulletSound(){
+        if (Input.GetKeyDown(KeyCode.Mouse0)){
+            bulletSound.Play();
+            Debug.Log("bullet");
+        }
     }
 }
