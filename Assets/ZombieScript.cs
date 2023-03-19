@@ -8,7 +8,6 @@ public class ZombieScript : MonoBehaviour
     // Start is called before the first frame update
     public GameObject Target;
     public float speed = 1.5f;
-
     public GameObject hitBlood;
 
     [SerializeField] MeshRenderer renderer;
@@ -16,7 +15,6 @@ public class ZombieScript : MonoBehaviour
     [SerializeField] Rigidbody rb;
     [SerializeField] Image timerFill;
     [SerializeField] Canvas uiCanvas;
-    
     [SerializeField] ParticleSystem[] explosion;
 
     Transform playerTransform;
@@ -25,6 +23,7 @@ public class ZombieScript : MonoBehaviour
     const int MAX_TIMER = 250; // in frames
     bool toExplode = false;
     private bool isDead = false;
+    public static int score = 0;
 
     void Start()
     {
@@ -52,6 +51,9 @@ public class ZombieScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Bullet"){
+            score += 1;
+            Debug.Log("Zombie killed " + score);
+            //PlayerBehavior.playerScore();
             OnHit();
             Explode();
             toExplode = true;
@@ -63,7 +65,6 @@ public class ZombieScript : MonoBehaviour
     {
         GameObject effectIns = (GameObject)Instantiate(hitBlood, transform.position, transform.rotation);
         Destroy (effectIns, 2);
-
     }
     void Explode() {
         if (isDead)
@@ -78,5 +79,4 @@ public class ZombieScript : MonoBehaviour
             explosion[i].Play();
         }
     }
-
 }

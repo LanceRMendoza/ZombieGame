@@ -41,12 +41,10 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.tag == "Zombie")
             splatterSound.Play();
             Destroy(gameObject);
-            Debug.Log("working");
     }
     public void playBulletSound(){
         if (Input.GetKeyDown(KeyCode.Mouse0)){
             bulletSound.Play();
-            Debug.Log("bullet");
         }
     }
 }

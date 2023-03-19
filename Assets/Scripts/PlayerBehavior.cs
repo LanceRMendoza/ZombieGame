@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehavior : MonoBehaviour
 {
@@ -11,9 +12,8 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] private Transform modelContainer;
     [SerializeField] private Text debugText;
     [SerializeField] LayerMask groundLayer;
-
+    
     [Header("Designer Variables")]
-
     // Adds a slider on the range.
     [SerializeField] [Range(10,800)]private int walkSpeed;
     [SerializeField] [Range(10,800)]private int airSpeed;
@@ -42,6 +42,7 @@ public class PlayerBehavior : MonoBehaviour
 
     // Audio
     public AudioSource audioPlayer;
+    private int playerHealth = 3;
 
     private void Awake(){
         inputs = new PlayerInput();
@@ -54,11 +55,10 @@ public class PlayerBehavior : MonoBehaviour
         //lerp = Linear interpolation, start + (b - a) * t
     }
 
-    
-
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)){
             audioPlayer.volume = 1f;
         }
@@ -135,7 +135,6 @@ public class PlayerBehavior : MonoBehaviour
             // Actual Move
             rb.AddForce(moveDirection * airSpeed);
         }
-
     }
 
     private void JumpStart(){
@@ -168,6 +167,20 @@ public class PlayerBehavior : MonoBehaviour
 
     private void OnDisable(){
         inputs.Disable();
+    }
+
+    // Player is destroyed after 3 hits.
+    void OnCollisionEnter(Collision other){
+    if (other.gameObject.tag == "Zombie")
+    {
+        playerHealth -= 1;
+        Debug.Log("hit");
+
+            if(playerHealth <= 0){
+            Destroy(gameObject);
+            SceneManager.LoadScene("GameOver");
+            }
+        }
     }
 }
 

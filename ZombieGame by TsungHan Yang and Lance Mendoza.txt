@@ -13,8 +13,13 @@ Press the "Space Bar" button to jump on platforms and attain the blue spheres.
 Press the "Left Mouse" button to fire your weapon.
 
 Survive from the zombie horde if you can!
+You have 3 lives and each time a zombie gets to close the player gets hit shown in the console. 
+Every zombie that is eliminated gets + 1 in the player score.
 
 Have fun!
+
+Link to Github for our project.
+https://github.com/LanceRMendoza/ZombieGame
 
 Asset Credits:
 Free Materials
