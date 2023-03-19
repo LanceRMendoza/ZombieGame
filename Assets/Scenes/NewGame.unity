@@ -702,8 +702,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Your mission is to collect all the circular blue objects in the level!
-    Good luck and let the force be with you!
+  m_Text: 'Run away or slay the zombies!
+
+    Use WASD to move, SPACEBAR to Jump
+    and Left Mouse Click to Fire.'
 --- !u!222 &1531828387
 CanvasRenderer:
   m_ObjectHideFlags: 0
